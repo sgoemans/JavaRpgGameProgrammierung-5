@@ -35,12 +35,13 @@ public class Game implements Runnable {
     TileSet tileSet = new TileSet("/tiles/rpg.png", 12, 12);
     level = new Level("/level/level1.txt", tileSet);
     SpriteSheet playerSprite = new SpriteSheet("/sprites/player.png", 3 /*moves*/, 4 /*directions*/, 64 /*width*/, 64 /*height*/);
-    player = new Player(320, 320, playerSprite);    while(true) {
+    player = new Player(320, 320, playerSprite);
+    while(true) {
       oldTimestamp = System.currentTimeMillis();
       update();
       timestamp = System.currentTimeMillis();
       if(timestamp-oldTimestamp > maxLoopTime) {
-        System.out.println("Wir sind zu sp‰t!");
+        System.out.println("Wir sind zu sp√§t!");
         continue;
       }
       render();
